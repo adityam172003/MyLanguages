@@ -1,0 +1,746 @@
+Learning the C language 
+
+[ 1 ] Basics : 
+--------------
+
+C is a procedural, high level programming language.
+
+It was mainly developed as a system programming language to write the UNIX operating 
+system. Developed by Dennis Ritchie in the year 1972.
+
+# Difference in C and C++
+
+1] C++ supports OOPs paradigm while C only have procedural concept of programming.
+2] C++ have exception handling capablities. In C, we have to resolve manually.
+3] There are no references in C.
+
+
+# what are the header files and how they are written . what is preprocessing directive ?
+# can we write void  main() insted of int main() ?
+# in how many ways we can write main method in c ?
+    int main();
+    main();
+        
+    void main();
+    int main(void);
+    main(void);
+    void main(void);    
+    int main(int argc, char* argv[])
+    --------------------------------
+
+
+
+
+
+# What are the Most Important Features of C Language?
+
+    Procedural Language
+    Fast and Efficient
+    Modularity
+    Statically Type
+    General-Purpose Language
+    Rich set of built-in Operators
+    Libraries with Rich Functions
+    Middle-Level Language
+    Portability
+
+
+C programming language as the middle-level language provides programmers access to direct 
+manipulation with the computer hardware but higher-level languages do not allow this
+
+
+# What is the latest C version / standard 
+ : C17 / C20 
+
+# What is compilation of the code mean what happens behind the scene ?
+ The compilation is the process of converting the source code of the C language into 
+ machine code
+ reference : https://www.geeksforgeeks.org/compiling-a-c-program-behind-the-scenes/ref=lbp 
+
+ commands to run C Program
+  1]  g++ file_name.c -o output_filename
+  2]  ./output_filename [arg1 arg2] 
+
+    if we do not use the -o then default output file name will be a.out 
+    for linux and for windows it is a.exe (executable file is created there )
+
+# what the below command does
+    gcc -Wall -save-temps filename.c –o filename  
+    ---------------------------------------------
+
+========================================================================================
+----------------------------------------------------------------------------------------
+
+# how many reserved keywords present in c 
+    C language supports 32 keywords
+
+    auto         double      int        struct
+    break        else        long       switch
+    case         enum        register   typedef
+    char         extern      return     union
+    const        float       short      unsigned
+    continue     for         signed     void
+    default      goto        sizeof     volatile
+    do           if          static     while 
+
+
+# what characters can identifiers accept 
+   An identifier can include letters (a-z or A-Z), and digits (0-9).
+   An identifier cannot include special characters except the ‘_’ underscore. 
+   An identifier can only begin with an underscore or letters.
+   C language is case-sensitive so, ‘name’ and ‘NAME’ are different identifiers.
+
+# What is the type of C is it statically or dynamically typed ?
+    C is a strongly typed language so all the variables types must be specified before 
+    using them.
+
+# what are the various aspects to declare variables ?
+    There are 3 aspects of defining a variable:
+
+        Variable Declaration
+        Variable Definition
+        Variable Initialization
+
+    1 ] When the variable is declared, an entry in symbol table is created and memory 
+        will be allocated at the time of initialization of the variable
+    
+    2 ] In the definition of a C variable, the compiler allocates some memory and some 
+        value to it. A defined variable will contain some random garbage value till it is 
+        not initialized.
+    
+    3 ] Initialization of a variable is the process where the user assigns some meaningful 
+        value to the variable.
+    
+# What are the various types of variables in C 
+        Local Variables
+        Global Variables
+        Static Variables
+        Automatic Variables
+        Extern Variables
+        Register Variables
+
+        Static variable :
+            Static variables have the property of preserving their value even after  they 
+            are out of their scope! Hence, a static variable preserves its previous value 
+            in its previous scope and is not initialized again in the new scope. 
+
+            If we want to calculate how many times does one function gets called then we 
+            can declatre counter as static int counter ; 
+
+            They can be initialized by constants only 
+
+        Automatic variables :
+            All local variables are auto by default 
+
+        External Variables :
+            External variables in C can be shared between multiple C files. 
+
+
+
+# What is the difference between variable declaration and definition in C?
+
+    In variable declaration, only the name and type of the variable is specified but no 
+    memory is allocated to the variable.
+
+    In variable definition, the memory is also allocated to the declared variable.
+
+
+# what is another way to declare constants in c insted of using const keyword ?
+    1]  Using #define preprocesser 
+    We can also define a constant in C using #define preprocessor. The constants defined 
+    using #define are macros that behave like a constant. These constants are not handled 
+    by the compiler, they are handled by the preprocessor and are replaced by their value 
+    before compilation.
+
+    2 ] Using enum 
+
+# can we change the value of const in c ? 
+    Yes , we can change the const variable value using loophole concept 
+    refer 02_Variable_constantChange.c file for more info 
+
+
+# What is scope and lifetime of the variable 
+
+    The scope of the variable is the region where it is valid to refer to the variable 
+    using its name.
+ 
+    The lifetime of the variable is the time between it is allocated memory and it is 
+    deleted from the memory.
+
+===========================================================================================
+-------------------------------------------------------------------------------------------
+
+
+Datatypes 
+    refer : https://www.geeksforgeeks.org/data-types-in-c/?ref=lbp
+
+
+# what are the various modifiers present in C ?
+
+    short 
+    long 
+    signed 
+    unsigned 
+
+    these modifiers are used to change the memory size of the vaiable 
+
+
+# What is type casting 
+    Type conversion is done at compile time and it is also called widening conversion 
+    because the destination data type can’t be smaller than the source data type. 
+
+
+# what are the format specifier which are used to print the number in octal and 
+# in hexa decimal format 
+    refer : https://www.geeksforgeeks.org/format-specifiers-in-c/
+
+# what is return type of printf and scanf and what they returns ? 
+    printf returns the int value and it is the number of charactors printed on concole 
+    scanf returns int value which is either 1 0 or -1 depending on the successfull execution of input operation
+
+# what is the formatted and unformatted io operation 
+    refer : https://www.geeksforgeeks.org/formatted-and-unformatted-input-output-functions-in-c-with-examples/
+
+# it is necessary to focus on io operations 
+
+
+===========================================================================================
+-------------------------------------------------------------------------------------------
+
+
+
+[ 2 ] Operators  : 
+------------------
+
+# What are the various operators present in C
+    unary operators 
+        1 ] unary operator
+
+    binary operators    
+        1 ] arithmatic operators 
+        2 ] relationl operators 
+        3 ] bitwise operators 
+        4 ] logical operators 
+        5 ] assignment operators 
+
+    ternary operators
+        1 ] ternary operator
+
+    other operator 
+        1 ] sizeof 
+        ----------- it is compiletime unary operator 
+        2 ] (.) and (->) operator 
+        3 ] & address of and * pointers operator 
+
+# Explain sizeof operator and its importance 
+    refer : https://www.geeksforgeeks.org/sizeof-operator-c/?ref=lbp
+
+
+===========================================================================================
+-------------------------------------------------------------------------------------------
+
+
+[ 3 ] Control Statements : 
+--------------------------
+
+#   What are the various decision making statements in C ?
+    
+    1 ] if
+    2 ] if -else 
+    3 ] if -else if - .... else
+    4 ] switch 
+
+# list out various jump statements 
+
+    1 ] break
+    2 ] continue 
+    3 ] goto
+    4 ] return 
+
+# how can we use range in switch case statement 
+
+    case 1 ... 10 : it mean 1 to 10 
+    case 'a' ... 'z' 
+    thats how we can use range sequence 
+
+# what are the various types of loops present in C 
+    entry controp       and exit control 
+         |                      |
+    for(init;cond;incr)      do{ }while(condition)
+    while(conditioin)  
+
+    do{ }while(condition) loop always runs atleast ones in program 
+
+# state the execution of loops 
+
+    for loop  :	first Initializes, then condition check, then executes the body and at  
+                last, the update is done.
+
+    while loop: first Initializes, then condition checks, and then executes the body, and 
+                updating can be inside the body.
+    
+    do-while loop:	do-while first executes the body and then the condition check is done.
+
+
+# What is continue in C?
+    The C continue statement resets program control to the beginning of the loop when 
+    encountered.
+
+# What is goto statement in c ?
+
+    The C goto statement is a jump statement which is sometimes also referred to as an unconditional jump statement. 
+
+
+===========================================================================================
+
+[ 4 ] Functions : 
+--------------------------
+
+refer: https://www.geeksforgeeks.org/c-functions/?ref=lbp
+
+# what is function ?
+    Functions are the block of code that is executed every time they are called during an 
+    execution of a program.
+
+# what is forward declaration ?
+    Sometimes we define the function after its call to provide better readibliy. In such 
+    cases, we declare function before the their defiinition and call. Such declaration are 
+    called Forward Declaration.
+
+# explain function declaration , definition and function calls.
+
+# what are the various types of functions present in c  ?
+        1 ] user defined functions 
+        2 ] builtin functions  
+
+
+# what are the formal and actual parameters in function ?
+
+        int fun(int p1 ,int p2 ) <------- formal parameters 
+                                          these are the local to the function 
+
+
+        int main(void){
+            fun(10,20)  <------------- actual parameters 
+        }
+
+
+
+# in how many typs we can pass the value to the function 
+
+    1 ] pass by value 
+    2 ] pass by reference 
+    3 ] pass by address 
+
+# what is difference between function parameters and function arguments ?
+    Function parameters are the values declared in a function declaration. Whereas, 
+    function arguments are the values that are passed in the function during the function 
+    call.
+
+
+# what is the importance of main method 
+   The main function in C is the entry point of a program where the execution of a program 
+   starts.
+
+# what is callback 
+    A callback is any executable code that is passed as an argument to another code, which 
+    is expected to call back (execute) the argument at a given time. In simple language, 
+    If a reference of a function is passed to another function as an argument to call it, 
+    then it will be called a Callback function.
+
+
+# nested functions are not allowed in c; 
+
+# what are  the variadic functions in c ? 
+    the functions which takes variable number of arguments 
+
+
+
+===========================================================================================
+
+
+
+
+[ 5 ] Arrays : 
+--------------------------
+
+
+# What is Array in C?
+    An array in C is a fixed-size collection of similar data items stored in contiguous 
+    memory locations
+
+# what are the various ways to initialize the array?
+
+  1]  int arr[2] = {1,2};
+  2]  int arr[]  ={12,3,1,};
+  3]  int arr[2]; for(int i=0;i<2;i++){arr[i]=(i+1)};
+
+
+# what does the name of the array defines and what it is? is it a pointer or variable ?
+    The array name is a constant pointer to the first element of the array and the array 
+    decays to the pointers when passed to the function.
+
+#  how do we pass array as a parameter to function ? 
+    An array is always passed as pointers to a function in C.
+
+    int f(int arr[]) or int f(int *arr)
+
+
+    int arr[2];
+ 
+    printf("%d ", arr[3]);
+    printf("%d ", arr[-2]);
+    
+    It causes the unexpected result but does not cause eny exception 
+    or compile time error 
+
+Address of ith = Address of 1st Element + (Index * Size of Each Element)
+
+
+
+# How 2D Arrays are Stored in the Memory?
+    1 ] Row major 
+    2 ] Column major 
+
+    Revise the row major and column major formulas 
+
+# We cant create an array of type void 
+
+# but we can have the array of void pointers and function pointers 
+
+=========================================================================================
+----------------------------------------------------------------------------------------
+
+
+[ 6 ] String 
+-----------------
+
+
+# What is the string in C ?
+
+    A String in C programming is a sequence of characters terminated with a null character 
+    ‘\  0'.
+
+# state various ways to declare string 
+     
+     When a Sequence of characters enclosed in the double quotation marks is encountered 
+     by the compiler, a null character ‘\0’ is appended at the end of the string by 
+     default.
+     
+    char str[] = "GeeksforGeeks";
+    char str[50] = "GeeksforGeeks";
+    char str[14] = { 'G','e','e','k','s','f','o','r','G','e','e','k','s','\0'};
+    char str[] = { 'G','e','e','k','s','f','o','r','G','e','e','k','s','\0'};
+
+
+# what is readonly memory and how it is related to string ;
+
+
+
+==========================================================================================
+------------------------------------------------------------------------------------------
+
+
+[ 7 ]  Pointers 
+-------------------
+
+Pointer is a derived data type |: 
+             ----------------- |:
+
+A pointer is defined as a derived data type that can store the address of other C 
+variables or a memory location. We can access and manipulate the data stored in that 
+memory location using pointers.
+
+
+
+# what are the various types of pointers 
+
+    1 ] Integer pointer 
+    2 ] Array pointer 
+    3 ] Structure pointer 
+    4 ] Function pointer (function pointer stores the start of executable code.)
+    5 ] Double pointer 
+    6 ] Null pointer 
+    7 ] Void pointer 
+    8 ] Wild pointer 
+
+    9 ] Constant pointer    It will always point to the same memory address.
+
+    10] Pointer to constant variable  (The pointers pointing to a constant value that 
+                                        cannot be modified are called pointers to a 
+                                        constant.)
+
+    11] Dangling pointer (addressing the deleted memory)
+
+
+# can ve destructure the void pointer ?
+    One of the main properties of void pointers is that they cannot be dereferenced.
+
+
+# Size of Pointers in C 
+
+    The size of the pointers in C is equal for every pointer type. The size of the pointer 
+    does not depend on the type it is pointing to. It only depends on the operating system 
+    and CPU architecture. The size of pointers in C is 
+
+#    8 bytes for a 64-bit System
+#    4 bytes for a 32-bit System
+
+# which valid arithmatic operations can we do on pointers ?
+   
+    1] Increment/Decrement of a Pointer
+
+    Increment:
+    It is a condition that also comes under addition. When a pointer is 
+    incremented, it actually increments by the number equal to the size of the data type 
+    for which it is a pointer.
+    
+    Decrement: 
+    It is a condition that also comes under subtraction. When a pointer is decremented, it 
+    actually decrements by the number equal to the size of the data type for which it is a 
+    pointer. 
+
+    2] Addition of Integer to Pointer
+
+    When a pointer is added with an integer value, the value is first multiplied by the 
+    size of the data type and then added to the pointer.
+
+    3] Subtraction  of Integer to Pointer
+
+    When a pointer is subtracted with an integer value, the value is first multiplied by 
+    the size of the data type and then subtracted from the pointer similar to addition.
+
+    4] Subtraction of Two Pointers
+
+    The subtraction of two pointers is possible only when they have the same data type.
+    The result is generated by calculating the difference between the addresses of the two 
+    pointers and calculating how many bits of data it is according to the pointer data 
+    type. The subtraction of two pointers gives the increments between the two pointers. 
+
+    5] Comparison of Pointers
+
+    We can compare the two pointers by using the comparison operators in C. We can 
+    implement this by using all operators in C >, >=, <, <=, ==, !=.  
+
+
+
+# declare pointer to array 
+    data_type (*ptr_name)[size];
+    int (*arr)[10];
+    this arr pointer points to the whole array of integer of size 10 ;
+
+# what is difference between pointer to constant , constant pointer and constant pointer to constant variable 
+
+    const data_type * ptr; pointer to constant variable 
+
+    data_type * const ptr; constant pointer 
+
+    const data_type* const ptr; constant pointer to constant 
+
+# char *pointer = “abc”  here the "abc" is literal stored in read only memory 
+# we cant change the value of it 
+
+
+# What is dandling pointer and wild pointer ?
+
+=========================================================================================
+-----------------------------------------------------------------------------------------
+
+
+[ 8 ] User defined data types 
+------------------------------
+
+# What is structures in c ?
+    The structure in C is a user-defined data type that can be used to group items of 
+    possibly different types into a single type. 
+
+    @ We can not initialize the members insize the structure where we declare them 
+
+    The reason for the above error is simple. When a datatype is declared, no memory is 
+    allocated for it. Memory is allocated only when variables are created.
+
+# In how many ways we can initialize the members of the structure 
+
+    1 ] Assignment operator 
+    2 ] Initializer list 
+    3 ] Designated initializer list 
+
+# What is C Structure Padding and Packing ? 
+    Structure padding is the concept of adding multiple empty bytes in the structure to 
+    naturally align the data members in the memory. It is done to minimize the CPU read 
+    cycles to retrieve different data members in the structure.
+
+    There are some situations where we need to pack the structure tightly by removing the 
+    empty bytes. In such cases, we use Structure Packing. C language provides two ways for 
+    structure packing:
+
+    Using #pragma pack(1)
+    Using __attribute((packed))__
+    
+
+# Typedef is limited to giving symbolic names to types only.
+
+
+==========================================================================================
+------------------------------------------------------------------------------------------
+
+[ 9 ] Storage classes in C
+------------------------------
+
+# What are the storage classes ? 
+    C Storage Classes are used to describe the features of a variable/function. These 
+    features basically include the scope, visibility, and lifetime which help us to trace 
+    the existence of a particular variable during the runtime of a program.
+
+    https://www.geeksforgeeks.org/storage-classes-in-c/?ref=lbp
+
+    ![alt text](image.png)
+
+
+# Give various storage classes in C
+
+    * Volatile is not a storage class specifier in C.
+
+    1) auto
+
+    This is the default storage class for all the variables declared inside a function or 
+    a block
+
+    2) extern
+
+    Extern storage class simply tells us that the variable is defined elsewhere and not 
+    within the same block where it is used.
+
+    3 ) static 
+    
+    Static variables have the property of preserving their value even after they are out 
+    of their scope! Hence, static variables preserve the value of their last use in their 
+    scope. So we can say that they are initialized only once and exist till the 
+    termination of the program.
+
+
+    4 ) register 
+    
+    This storage class declares register variables that have the same functionality as 
+    that of the auto variables. The only difference is that the compiler tries to store 
+    these variables in the register of the microprocessor if a free register is available.
+    Registers are faster than memory to access, so the variables which are most frequently 
+    used in a C program can be put in registers using the register keyword.
+    It’s the compiler’s choice to put it in a register or not
+    ---------------------------------------------------------
+
+
+# Static functions in c are restricted to declared file only we cant use that function out
+# side of the file.
+
+# what is volatile keyword and why it is used ?     
+     
+    The volatile keyword is intended to prevent the compiler from applying any 
+    optimizations on objects that can change in ways that cannot be determined by the 
+    compiler. 
+
+
+
+=========================================================================================
+-----------------------------------------------------------------------------------------
+
+
+[ 10 ] Memory Management in C  
+--------------------------------
+
+
+![alt text](image-1.png)
+
+
+refer : https://www.geeksforgeeks.org/memory-layout-of-c-program/?ref=lbp
+
+
+# Dynamic memory allocation in C 
+
+    There are 4 library functions provided by C defined under <stdlib.h> header file to facilitate dynamic memory 
+    allocation in C programming. They are: 
+
+    1 ] malloc()   :-
+
+                    memory allocation  
+                    It returns a pointer of type void which can be cast into a pointer of 
+                        any form 
+                    It doesn’t Initialize memory at execution time so that it has 
+                    initialized each block with the   
+                        default garbage value initially
+                    If space is insufficient, allocation fails and returns a NULL 
+                        pointer.  
+
+    2 ] calloc()   :- 
+                    calloc or contiguous allocation method in C is used to dynamically 
+                        allocate the specified number of blocks of memory of the specified 
+                        type. 
+                    it is very much similar to malloc() but has two different points 
+                        and these are:
+                    It initializes each block with a default value ‘0’.
+                    It has two parameters or arguments as compare to malloc().
+                    
+    3 ] free()    
+                    Calling the free() function on a NULL pointer is totally valid and     
+                    will not cause any error.
+
+    4 ] realloc()
+
+# Explain memory leak and how to avoid it 
+
+===========================================================================================
+-------------------------------------------------------------------------------------------
+
+[ 11 ] Preprocessor 
+
+    Preprocessors are programs that process the source code before compilation.
+
+    ![alt text](image-2.png)
+
+
+    The source code written by programmers is first stored in a file, let the name be “program.c“
+    file is then processed by preprocessors and an expanded source code file is generated named “program.i”.
+
+    All of these preprocessor directives begin with a ‘#’ (hash) symbol. 
+
+    1 ] The ‘#define’ directive is used to define a macro.
+    2 ] The #include preprocessor directive is used to include the header files in the C 
+        program.
+    
+    3 ] 
+        Conditional Compilation in C directives is a type of directive that helps to 
+        compile a specific portion of the program or to skip the compilation of some 
+        specific part of the program based on some conditions.
+    
+    4 ]  #undef directive is used to undefine an existing macro
+
+    
+
+# What are the macros 
+    a macro is a piece of code in a program that is replaced by the value of the macro.
+    Macro is defined by #define directive. 
+
+
+    Types of macros 
+    1 ] object like macro 
+    2 ] chain macro 
+    3 ] multiline macro
+
+
+
+
+
+===========================================================================================
+-------------------------------------------------------------------------------------------
+
+# Extra related to mcqs 
+
+
+1 ] The bool data type cannot be used in C without including the stdbool.h heade
+2 ] The printf function returns the number of characters printed to the standard output,
+3 ] Volatile is not a storage class specifier in C.
+4 ] Calling the free() function on a NULL pointer is totally valid and will not cause any 
+    error.
+5 ] Function Overloading is not possible in C as it is not an Object-Oriented Language. 
+
+

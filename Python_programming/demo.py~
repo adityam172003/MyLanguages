@@ -1,0 +1,5 @@
+import sys
+
+
+print(sys.argv[0])
+print("Learing the python : "+sys.argv[1]);

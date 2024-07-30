@@ -1,0 +1,15 @@
+{
+  "name": "js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "1_1_Variables_DataTypes.js",
+  "scripts": {
+  
+    "start": "nodemon 3_3_Array.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^3.0.3"
+  }
+}

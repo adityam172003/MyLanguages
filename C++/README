@@ -1,0 +1,691 @@
+# Learning C++
+
+
+
+[ 1 ]  Basice 
+----------------
+
+    C++ is a general-purpose programming language that was developed as an enhancement of 
+    the C language to include object-oriented paradigm. It is an imperative and a compiled 
+    language.
+
+    C++ is an object-oriented, multi-paradigm language that supports procedural, 
+    functional, and generic programming styles.
+
+
+# Feachers 
+
+    1 ] Object- Oriented programming language
+    2 ] Templets 
+    3 ] STL
+    4 ] Exception handling 
+
+C++ got the OOP features from Simula67 Programming language. 
+
+using namespace directive. This directive tells the compiler that the subsequent code is 
+making use of names in the specified namespace. 
+
+
+# Name the C++ tokens and what are the Tokens 
+
+    every word in c++ language it a token 
+
+    variable 
+    keyword     (reservered words in C++) 95 reservered keywords present in C++
+    identifiers 
+    constants 
+    literals 
+    string 
+    special symbols 
+    operators 
+
+# Identifiers 
+     entities like variables, functions, classes, or structs must be given unique names 
+     within the program so that they can be uniquely identified. The unique names given to 
+     these entities are known as identifiers.
+     As C++ is a case-sensitive language so identifiers such as ‘first_name’ and
+     ‘First_name’ are different entities.
+    
+
+# Strings
+    In C++, a string is not a built-in data type like ‘int’, ‘char’, or ‘float’. It is a 
+    class available in the STL library which provides the functionality to work with a 
+    sequence of characters, that represents a string of text.
+
+# What is difference between keywords and identifiers 
+    https://www.geeksforgeeks.org/difference-between-keyword-and-identifier/
+
+
+# What is difference between variable declaration and definintion   
+
+# whare are the various ways to declare constant variable 
+
+    1 ] Using const Keyword
+
+    2 ] Using constexpr Keyword 
+        Major difference is that the constexpr constants are initialized at compiler time
+
+    3 ] Using #define Preprocessor
+
+    We have to initialize the constant variable at the time of declaration as we cannot 
+    modify the value of it later in the program.
+
+# what are the various scopes in c++
+    1 ] local scope 
+    2 ] global scope 
+
+    Whenever there is a local variable defined with same name as that of a global variable 
+    then the compiler will give precedence to the local variable
+
+
+# what are the various storage classes in c++ 
+
+    C++ Storage Classes are used to describe the characteristics of a variable/function. 
+    It determines the lifetime, visibility, default value, and storage location which 
+    helps us to trace the existence of a particular variable during the runtime of a 
+    program. Storage class specifiers are used to specify the storage class for a 
+    variable.       
+
+    1 ] auto Storage Class
+    2 ] register Storage Class
+    3 ] extern Storage Class
+    4 ] static Storage Class
+    5 ] mutable Storage Class
+    6 ] thread_local Storage Class
+
+    https://www.geeksforgeeks.org/storage-classes-in-c-with-examples/
+
+
+# Data types 
+
+    ![alt text](image.png)
+
+
+    1 ] primary 
+    2 ] derived 
+    3 ] user defined 
+
+
+# Primary 
+
+   1] Integer
+   2] Character
+   3] Boolean
+   4] Floating Point
+   5] Double Floating Point
+   6] Valueless or Void
+   7] Wide Character
+
+
+# derived 
+
+    1 ] function 
+    2 ] pointers 
+    3 ] references 
+    4 ] Arrays 
+
+# user defined 
+    1 ] classes 
+    2 ] struct 
+    3 ] union 
+    4 ] enum 
+    5 ] Typedef
+
+
+# What are the literals 
+    Literals are fundamental elements used to represent constant values used in C++ 
+    programming language. 
+
+    1 ] Integer Literals
+    2 ] Floating Point Literals
+    3 ] Character Literals
+    4 ] String Literals
+    5 ] Boolean Literals
+
+# what are the type modifiers 
+
+
+
+    1] signed
+    2] unsigned
+    3] short
+    4] long
+
+
+# what are the various operators present in C
+
+    1 ] arithmatic operator 
+    2 ] relational operator
+    3 ] logical operator
+    4 ] bitwise operator
+    5 ] assignment operator
+    6 ] turnary operator
+    7 ] sizeof operator 
+    8 ] scop resolution operator 
+
+# whar is cout and cin are  it object , method , variable ? 
+    The C++ cout statement is the instance of the ostream class.
+    C++ cin statement is the instance of the class istream
+
+# Un-buffered standard error stream (cerr):
+
+
+
+# what are the various jump statements present in C++
+    
+    1 ] break
+    2 ] continue
+    3 ] goto
+    4 ] return
+
+# what are the two types of loops present in c++
+
+    1 ] entry control loop 
+    2 ] exit control loop 
+
+# what are the actual and formal parameters 
+
+    The parameters passed to the function are called actual parameters. For example, in 
+    the program below, 5 and 10 are actual parameters. 
+    
+    The parameters received by the function are called formal parameters. For example, in 
+    the above program x and y are formal parameters. 
+
+
+# what is inline function 
+
+    inlining is only a request to the compiler, not a command. The compiler can ignore the 
+    request for inlining. 
+
+# what is use of lambda function and when to not 
+
+    se lambda functions when you need to define a short, one-time-use function.
+    
+    Use lambda functions when you need to create a higher-order function or pass a 
+    function as an argument.
+    
+    Use lambda functions when you need to create a closure or capture variables from the 
+    surrounding scope.
+    
+    Avoid using lambda functions when you need to reuse a function or when the code is too 
+    complex to read.
+
+
+===========================================================================================
+-------------------------------------------------------------------------------------------
+
+
+
+[ 2 ] Pointers and References 
+-------------------------------
+
+    Pointers are used to store the memory address of another variable whereas references 
+    are used to create an alias for an already existing variable.
+
+    References are like nick name for the variable 
+
+    Pointers in C++ are a symbolic representation of addresses
+    Pointers store the address of variables or a memory location. 
+    Pointers are symbolic representations of addresses. 
+
+# Array Name as Pointers
+
+    An array name contains the address of the first element of the array which acts like a 
+    constant pointer.
+    ----------------
+
+
+# how NULL is defined : NULL is typically defined as (void *)0;
+
+# What is nullptr 
+    nullptr is a keyword that can be used at all places where NULL is expected
+    Unlike NULL, it is not implicitly convertible or comparable to integral types.
+
+# What is reference variable ?
+    a variable which is nick name of other variable we can utilize it 
+    declared using int& var;
+
+    it is highely used to save memory by avoiding the copy of parameter passed to function 
+    local copy will  not be created by it 
+
+    reference can never be void 
+
+    Once a reference is created, it cannot be later made to reference another object
+    --------------------------------------------------------------------------------
+    -> int &t = x;
+    -> then we cant do &t=p for p variable it cant refer to variable p 
+
+    A reference must be initialized when declared. There is no such restriction with 
+    pointers.
+
+# what is difference between pointer and reference ? 
+
+==========================================================================================
+------------------------------------------------------------------------------------------
+
+[ 3 ] Strings in C++
+------------------------
+
+    string is a class In C++ inherits the properties of strings in c
+
+    
+# what are the various ways to declare string in c++
+    1] using string keyword
+    2] using c style strings
+
+# what are the various ways to take string as input 
+
+    1] cin
+    2] getline
+    3] stringstream
+
+
+
+===========================================================================================
+-------------------------------------------------------------------------------------------
+
+[ 4 ] Structure , unions and enumerations 
+
+
+    Structures are used to combine different types of data types, just like an array is 
+    used to combine the same type of data types.
+    when a datatype is declared, no memory is allocated for it. Memory is allocated only 
+    when variables are created.
+    Sizeof operator will generate 1 for an empty structure. (0 in c)
+    -------------------------------------------------------
+    Data Hiding is possible. (not in c)
+    -------------------------
+
+
+    Unions: A union is a type of structure that can be used where the amount of memory 
+    used is a key factor. 
+
+    Enums: Enums are user-defined types that consist of named integral constants.
+
+
+==========================================================================================
+------------------------------------------------------------------------------------------
+
+[ 5 ] Dynamic memory allocation
+---------------------------------
+
+    Both malloc() and new are used to allocate the memory dynamically in heap. But “new” 
+    does call the constructor of a class whereas “malloc()” does not.
+
+    free() frees memory but doesn’t call Destructor of a class whereas “delete” frees the 
+    memory and also calls the Destructor of the class.
+
+
+
+==========================================================================================
+------------------------------------------------------------------------------------------
+
+[ 6 ] OOP in C++
+
+
+# Class :- 
+----------  
+    
+    The building block of C++ that leads to Object-Oriented programming is a Class. It is 
+    a user-defined data type, which holds its own data members and member functions, which 
+    can be accessed and used by creating an instance of that class.
+    
+
+# Class is a blueprint of an object 
+
+# we can say that 
+   
+    Class in C++ is a blueprint representing a group of objects which shares some common 
+    properties and behaviors.
+
+# Object 
+
+    An Object is an identifiable entity with some characteristics and behavior.
+    
+
+# Encapsulation 
+    
+    Encapsulation is defined as wrapping up data and information under a single unit
+    
+    Encapsulation is defined as binding together the data and the functions that 
+    manipulate them.
+
+# Abstraction   
+    
+    Data abstraction refers to providing only essential information about the data to the 
+    outside world, hiding the background details or implementation. 
+
+# Polymorphism 
+
+    The word polymorphism means having many forms. 
+
+
+# Inheritance
+
+    The capability of a class to derive properties and characteristics from another class 
+    is called Inheritance.
+
+    code reusabality is one of the most important application of 
+    inheritance
+
+
+# how does object communicate with each other 
+    Objects communicate with one another by sending and receiving information.
+
+# what are the various ways to define member functions 
+
+    1 ] inside calss 
+    2 ] outside class  ( using scop resolution operator )
+
+# what are the types of constructors 
+    1 ] default constuctor 
+    2 ] parameterised constructor 
+    3 ] copy constructor 
+    4 ] move constructor (it makes use of move semantics to transfer the ownership of the 
+                 already created object to the new object without creating extra copies.) 
+
+
+
+# why to use semicolon at the end of class 
+    But the main reason why semi-colons are there at the end of the class is compiler 
+    checks if the user is trying to create an instance of the class at the end of it.
+
+# what are the access modifiers and why they are used 
+    Access modifiers are used to implement an important aspect of Object-Oriented 
+    Programming known as Data Hiding. 
+    1] Public
+    2] Private
+    3] Protected
+
+    Default access modifiers 
+        If we do not specify any access modifiers for the members inside the class, then 
+        by default the access modifier for the members will be Private.
+
+
+
+# What is friend class and friend function 
+   
+    A friend class can access private and protected members of other classes in which it 
+    is declared as a friend.
+
+    we can declare a class as friend 
+    we can declare a function as friend 
+
+# what are the main disadvantages of friend function 
+
+    Friend functions have access to private members of a class from outside the class 
+    which violates the law of data hiding.
+   
+    Friend functions cannot do any run-time polymorphism in their members.
+
+
+# can we declare constructor as virtual 
+    A constructor can not be declared virtual.
+
+# A constructor cannot be inherited.
+# destructor can-not be overloaded.
+# Destructor neither requires any argument nor returns any value
+# Objects are destroyed in the reverse order of their creation. In this case, t3 is the first to be destroyed, while t is the last.
+
+# In the case where the destructor is declared private, an instance of the class can also be created using the malloc() function.
+
+
+
+
+# The functions that are generated by the compiler by default if we do not provide them    
+# explicitly are:
+
+    1] Default Constructor
+    2] Copy Constructor
+    3] Move Constructors
+    4] Assignment Operator
+    5] Destructor
+
+# what is shallow and deep copy 
+
+# Scope resolution operator is for accessing static or class members and this pointer is for accessing object members when there is a local variable with the same name.
+-------------------------------------------------------------------------------------------
+
+
+# what is local class 
+    A class declared inside a function becomes local to that function and is called Local 
+    Class in C++.
+    A local class can have static functions but, not static data members.
+    All the methods of Local classes must be defined inside the class only.
+
+# we cann not access the private data members of the nested class inside the inclosing class 
+
+# what is difference between strucutre and class 
+
+
+
+# difference between abstraction and encapsulation in c++ 
+    https://www.geeksforgeeks.org/difference-between-abstraction-and-encapsulation-in-c/
+
+
+# Polymorphism 
+
+    ![alt text](image-1.png)
+
+
+# What is compile time overriding also known as early binding  
+    In compile time function overriding, the function call and the definition is binded at 
+    the compilation of the program. Due to this, it is also called early binding or static 
+    binding.
+
+
+# what is run time overriding or late binding or dynamic binding 
+    Function overriding can also be performed at the runtime, which means that function 
+    call will be binded to its definition during runtime (also known as late binding or 
+    dynamic binding
+
+    This can be done with the help of virtual functions.
+
+    override keyword tells the compiler that the given overridden function should be 
+    declared as virtual in the parent class
+
+# If you want to implement late binding or dynamic binding 
+# or if you want to implement runtime pollymorphism then virtual functions are used 
+# to implement them. 
+# without virtual we cant implement it 
+------------------------------------------------------------------------------------------
+
+
+# How does the compiler implements the runtime polymorphism 
+
+# which function declarations can not be overloaded 
+    
+    1) Function declarations that differ only in the return type
+    2) if any of them is a static member function declaration
+    3) Parameter declarations that differ only in a pointer * versus an array [] are 
+       equivalent.  
+    4) Parameter declarations that differ only in the presence or absence of const and/or  
+       volatile are equivalent
+    
+# different rule about const overloading function 
+
+    C++ allows functions to be overloaded on the basis of the const-ness of parameters 
+    only if the const parameter is a reference or a pointer. That is why program 1 failed 
+    in compilation, but program 2 worked fine. 
+
+     When we pass by reference or pointer, we can modify the value referred or pointed, so 
+     we can have two versions of a function, one which can modify the referred or pointed 
+     value, other which can not.
+
+
+# Why return type does not affect the function overlading 
+
+    Function overloading comes under the compile-time polymorphism. During compilation, 
+    the function signature is checked. So, functions can be overloaded, if the signatures 
+    are not the same. The return type of a function has no effect on function overloading, 
+    therefore the same function signature with different return type will not be 
+    overloaded. 
+
+
+
+
+
+# which operators cant be overloaded 
+    sizeof
+    typeid
+    Scope resolution (::)
+    Class member access operators (.(dot), .* (pointer to member operator))
+    Ternary or conditional (?:)
+
+
+
+#  Inheritance 
+
+    A derived class doesn’t inherit access to private data members. However, it does 
+    inherit a full parent object, which contains any private members which that class 
+    declares.
+
+# what are the modes of inheritance ?
+    
+    1] public
+    2] private 
+    3] protected 
+
+# access modifiers define the access specifier for the data mambers of derived class 
+# which are inherited from base class 
+
+# What are the various types of inheritance in c++
+
+   1] Single inheritance
+   2] Multilevel inheritance
+   3] Multiple inheritance
+   4] Hierarchical inheritance
+   5] Hybrid inheritance
+
+
+
+# Overloading does not work with derived class ie with inheritance 
+
+    Overloading doesn’t work for derived class in the C++ programming language. There is 
+    no overload resolution between Base and Derived
+
+
+# Virtual function 
+
+1] Virtual functions cannot be static.
+2] A class may have a virtual destructor but it cannot have a virtual constructor.
+
+# Limitations of virtual functions 
+    @lower: The function call takes slightly longer due to the virtual mechanism and makes 
+            it more difficult for the compiler to optimize because it does not know 
+            exactly which function is going to be called at compile time.
+    @Difficult to Debug: In a complex system, virtual functions can make it a little more 
+            difficult to figure out where a function is being called from.
+
+
+
+# Interesting thing about defacult paramters and virtual functions
+    https://www.geeksforgeeks.org/default-arguments-and-virtual-function-in-cpp/
+    The reason is, the default value is substituted at compile time. 
+
+
+# Can virtual functions be inlined?
+
+    Whenever a virtual function is called using a base class reference or pointer it 
+    cannot be inlined because the call is resolved at runtime, but whenever called using 
+    the object (without reference or pointer) of that class, can be inlined because the 
+    compiler knows the exact class of the object at compile time.
+
+
+# deleting the derived class reference stored in base class calls base class distructor 
+# we should declare it as virtual so compiler will call both the class distructor 
+
+
+# see virtual constructors  concept littlbit difficult 
+
+# we can have distructor as pure virtual 
+
+# In C++, a static member function of a class cannot be virtual 
+
+# Private method overriden which is public in base class will be  called at runtime 
+# polymorphism it calls the derived class method doesnt matter it is private or not 
+
+
+=========================================================================================
+-----------------------------------------------------------------------------------------
+
+[ 7 ]  Exception handling 
+--------------------------
+
+    exceptions are runtime anomalies or abnormal conditions that a program encounters 
+    during its execution. 
+
+# State the two type of exceptions in C++
+    1 ] synchronous 
+    2 ] asynchronous 
+
+
+
+# how to handle exception 
+
+    Multiple catch statements can be used to catch different type of exceptions thrown by 
+    try block.
+
+    There is a special catch block called the ‘catch-all’ block, written as catch(…), that 
+    can be used to catch all types of exceptions.
+
+    Implicit type conversion doesn’t happen for primitive types.
+
+
+# all exceptions in c++ are uncheked exception
+
+
+    When an exception is thrown, all objects created inside the enclosing try block are 
+    destroyed before the control is transferred to the catch block.
+
+
+# what is stack unwinding 
+
+    Stack Unwinding is the process of removing function entries from function call stack 
+    at run time. The local objects are destroyed in reverse order in which they were 
+    constructed. 
+
+    its exception traveling 
+
+    void myfun()throw(data type)
+    {
+
+    }
+
+===========================================================================================
+-------------------------------------------------------------------------------------------
+
+[ 8 ]  STL (Standard Templet Library) : 
+---------------------------------------
+
+    The C++ Standard Template Library (STL) is a collection of algorithms, data 
+    structures, and other components that can be used to simplify the development of C++ 
+    programs.
+
+
+# How many components STL has ?
+
+    1] Algorithms
+    2] Containers
+    3] Functors
+    4] Iterators
+
+#  Containers in STL : https://www.geeksforgeeks.org/containers-cpp-stl/
+
+    1 ] Sequence container 
+    2 ] Associative container 
+    3 ] Unordered Associative container 
+    4 ] Container Adapter 
+
+
+# 1 ] Vector 
+
+
+    
+
+
+
+
+
+
+
